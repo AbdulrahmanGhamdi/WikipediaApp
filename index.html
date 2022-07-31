@@ -1,0 +1,500 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Wikipedia</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="style.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+		
+    </head>
+    <body>
+
+		<!-------Overview modal------->
+<div class="modal fade" id="OverviewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Editing Overview (section)</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+			<div id="editor"></div>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" id="SaveChanges" class="btn btn-primary">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+		<!-------End Modal------->
+
+		<!-------History modal------->
+		<div class="modal fade" id="HistoryModal" tabindex="-1" aria-labelledby="HistoryModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="HistoryModalLabel">Editing History (section)</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="Historyeditor"></div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  <button type="button" id="SaveHistoryChanges" class="btn btn-primary">Save changes</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<!-------End Modal------->
+
+		<!-------Popularity modal------->
+		<div class="modal fade" id="PopularityModal" tabindex="-1" aria-labelledby="PopularityModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="PopularityModalLabel">Editing Popularity (section)</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="Popularityeditor"></div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  <button type="button" id="SavePopularityChanges" class="btn btn-primary">Save changes</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<!-------End Modal------->
+
+		<!-------Features modal------->
+		<div class="modal fade" id="FeaturesModal" tabindex="-1" aria-labelledby="FeaturesModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="FeaturesModalLabel">Editing Features (section)</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="Featureseditor"></div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  <button type="button" id="SaveFeaturesChanges" class="btn btn-primary">Save changes</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<!-------End Modal------->
+
+
+
+		<div class="wrapAll clearfix">
+			<div class="sidebar">
+				<div class="logo">
+					<a href="/"><img src='img/logo.png' alt="logo"></a>
+				</div>
+				<div class="navigation">
+					<ul>
+						<li><a href="#">Main page</a></li>
+						<li><a href="#">Contents</a></li>
+						<li><a href="#">Featured content</a></li>
+					</ul>
+					<h3>Interaction</h3>
+					<ul>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Portal</a></li>
+					</ul>
+					<h3>Interaction</h3>
+					<ul>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Portal</a></li>
+					</ul>
+				</div>
+
+			
+			</div>
+			<div class="mainsection">
+				<div class="headerLinks">
+					<span class="user"> Abdulrahman AlGhamdi</span> <a href="#Talk">Talk</a> <a href="#">Contributions</a> <a href="#">Create account</a> <a href="#">Sign out</a>
+				</div>
+				<div class="tabs clearfix">
+					<div class="tabsLeft">
+						<ul>
+							<li><a href="#" class="active">Article</a></li>
+							<li><a href="#">Talk</a></li>						
+						</ul>
+					</div>
+					<div id="simpleSearch">
+						<input type="text" name="searchInput" id="searchInput" placeholder="Search Wikipedia" size="12" />
+						<div id="submitSearch"></div>
+					</div>
+					<div class="tabsRight">
+						<ul>
+							<li><a href="#" class="active">Read</a></li>
+							<li><a href="#">View source</a></li>						
+							<li><a href="#">View history</a></li>						
+						</ul>
+					</div>
+				
+				</div>
+				<div class="article">
+					<h1>jQuery</h1>
+					<p class="siteSub">From Wikipedia, the free encyclopedia</p>
+
+					<div class="articleRight">
+						<div class="articleRightInner">
+							<img src="img/jquery-logo-vertical_large_square.png" alt="pencil" />
+						</div>
+						This is a jQuery <a href="https://jquery.com/" target=”_blank” >logo</a>
+					</div>
+					<p><b>jQuery</b> is a <a href="#" title="JavaScript library">JavaScript library</a> designed to simplify <a href="#" title="HTML">HTML</a> <a href="#" title="Document Object Model">DOM</a> tree traversal and manipulation, as well as <a href="#" class="mw-redirect" title="Event handling">event handling</a>, <a href="#" class="mw-redirect" title="CSS animation">CSS animation</a>, and <a href="#" title="Ajax (programming)">Ajax</a>.<sup id="cite_ref-jquery.com_3-0" class="reference"><a href="#">[3]</a></sup> It is <a href="#" class="mw-redirect" title="Free and open source software">free, open-source software</a> using the permissive <a href="#" title="MIT License">MIT License</a>.<sup id="cite_ref-jqorg-license2_4-0" class="reference"><a href="#">[4]</a></sup> As of May 2019, jQuery is used by 73% of the 10 million most popular websites.<sup id="cite_ref-:0_5-0" class="reference"><a href="#">[5]</a></sup> <a href="#" title="World Wide Web">Web</a> analysis indicates that it is the most widely deployed JavaScript library by a large margin, having at least 3 to 4 times more usage than any other JavaScript library.<sup id="cite_ref-:0_5-1" class="reference"><a href="#">[5]</a></sup><sup id="cite_ref-libscore.com_6-0" class="reference"><a href="#">[6]</a></sup>
+					</p>
+					<p>jQuery's syntax is designed to make it easier to navigate a document, select <a href="#" title="Document Object Model">DOM</a> elements, create <a href="#" title="Animation">animations</a>, handle <a href="#" title="Event (computing)">events</a>, and develop <a href="#" title="Ajax (programming)">Ajax</a> applications. jQuery also provides capabilities for developers to create <a href="#" title="Plug-in (computing)">plug-ins</a> on top of the JavaScript library. This enables developers to create <a href="#" title="Abstraction (computer science)">abstractions</a> for low-level interaction and animation, advanced effects and high-level, theme-able widgets. The modular approach to the jQuery library allows the creation of powerful <a href="#" title="Dynamic web page">dynamic web pages</a> and Web applications.
+					</p>
+					<p>The set of <a href="#Features">jQuery core features</a>—DOM element selections, traversal, and manipulation—enabled by its <i>selector engine</i> (named "Sizzle" from v1.3), created a new "programming style", fusing algorithms and DOM data structures. This style influenced the architecture of other <a href="#" class="mw-redirect" title="Comparison of JavaScript frameworks">JavaScript frameworks</a> like <a href="#" title="YUI Library">YUI v3</a> and <a href="#" title="Dojo Toolkit">Dojo</a>, later stimulating the creation of the standard <i>Selectors API</i>.<sup id="cite_ref-7" class="reference"><a href="#">[7]</a></sup>
+					</p>
+					<p><a href="#" title="Microsoft">Microsoft</a> and <a href="#" title="Nokia">Nokia</a> bundle jQuery on their platforms.<sup id="cite_ref-2008-09-28_8-0" class="reference"><a href="#">[8]</a></sup> Microsoft includes it with <a href="#" title="Microsoft Visual Studio">Visual Studio</a><sup id="cite_ref-9" class="reference"><a href="#">[9]</a></sup> for use within Microsoft's <a href="#" title="ASP.NET AJAX">ASP.NET AJAX</a> and <a href="#" title="ASP.NET MVC">ASP.NET MVC</a> frameworks while Nokia has integrated it into the Web Run-Time widget development platform.<sup id="cite_ref-10" class="reference"><a href="#">[10]</a></sup>
+					</p>
+					<div class="contentsPanel">
+						<div class="contentsHeader">Contents</div>
+						<ul>
+							<li>
+								<div class="OverviewSection">
+								<span>1</span><a href="#Overview">Overview</a><br>
+							</div>
+							<div class="HistorySection">
+								<span>2</span><a href="#History">History</a>
+							</div>
+							<div class="PopularitySection">
+								<ul>
+									<li><span>2.1</span><a href="#Popularity">Popularity</a> </li>					
+								</ul>
+							</div>
+							</li>
+							<div class="FeaturesSection">
+							<li><span>3</span><a href="#Features">Features</a></li>		
+							</div>			
+							<li><span>4</span><a href="#Externallinks">External links </a></li>
+
+						</ul>
+					</div>
+					<div class="OverviewSection">
+					<h2 id="Overview">Overview <span class="EditBrackets">[</span><button type="button" class="EditButton" data-bs-toggle="modal" data-bs-target="#OverviewModal">edit</button><span class="EditBrackets">]</span> <span class="EditBrackets">[</span><button type="button" class="DeleteButton DefDeleteButton" >delete</button><span class="EditBrackets">]</span>
+					</h2>
+					<p id="OverText">jQuery, at its core, is a Document Object Model (DOM) manipulation library. The DOM is a tree-structure representation of all the elements of a Web page. jQuery simplifies the syntax for finding, selecting, and manipulating these DOM elements. For example, jQuery can be used for finding an element in the document with a certain property (e.g. all elements with an h1 tag), changing one or more of its attributes (e.g. color, visibility), or making it respond to an event (e.g. a mouse click).
+						jQuery also provides a paradigm for event handling that goes beyond basic DOM element selection and manipulation. The event assignment and the event callback function definition are done in a single step in a single location in the code. jQuery also aims to incorporate other highly used JavaScript functionality (e.g. fade ins and fade outs when hiding elements, animations by manipulating CSS properties).
+					</p>
+				</div>
+
+				<div id="AfterDelete" style="display:none;">
+					<br>
+					<button type="button" id="UndoButton" class="btn btn-danger">Undo</button>
+				</div>
+
+				<div class="HistorySection">
+					<h2 id="History">History <span class="EditBrackets">[</span><button type="button" class="EditButton" data-bs-toggle="modal" data-bs-target="#HistoryModal">edit</button><span class="EditBrackets">]</span><span class="EditBrackets"> [</span><button type="button" class="DeleteHistoryButton DefDeleteButton" >delete</button><span class="EditBrackets">]</span>
+					</h2>
+					<div id="HistText">
+					<p>jQuery was originally created in January 2006 at BarCamp NYC by John Resig, influenced by Dean Edwards' earlier cssQuery library.[11][12] It is currently maintained by a team of developers led by Timmy Willison (with the jQuery selector engine, Sizzle, being led by Richard Gibson).[13] </p>
+					<p>jQuery was originally licensed under the CC BY-SA 2.5, and relicensed to the MIT license in 2006.[14] At the end of 2006, it was dual-licensed under GPL and MIT licenses.[15] As this led to some confusion, in 2012 the GPL was dropped and is now only licensed under the MIT license.[16]</p>
+				</div>
+			</div>
+
+			<div id="AfterHistoryDelete" style="display:none;">
+				<br>
+				<button type="button" id="UndoHistoryButton" class="btn btn-danger">Undo</button>
+			</div>
+			
+			<div class="PopularitySection">
+					<h2 id="Popularity">Popularity <span class="EditBrackets">[</span><button type="button" class="EditButton" data-bs-toggle="modal" data-bs-target="#PopularityModal">edit</button><span class="EditBrackets">]</span><span class="EditBrackets"> [</span><button type="button" class="DeletePopularityButton DefDeleteButton" >delete</button><span class="EditBrackets">]</span>
+					</h2>
+					<div id="PopText">
+					<ul><li>In 2015, jQuery was used on 62.7% of the top 1 million websites (according to BuiltWith), and 17% of all Internet websites.<sup id="cite_ref-17" class="reference"><a href="#">[17]</a></sup></li>
+						<li>In 2017, jQuery was used on 69.2% of the top 1 million websites (according to Libscore).<sup id="cite_ref-libscore.com_6-1" class="reference"><a href="#">[6]</a></sup></li>
+						<li>In 2018, jQuery was used on 78% of the top 1 million websites.<sup id="cite_ref-:1_18-0" class="reference"><a href="#">[18]</a></sup></li>
+						<li>In 2019, jQuery was used on 80% of the top 1 million websites (according to BuiltWith),<sup id="cite_ref-:1_18-1" class="reference"><a href="#">[18]</a></sup> and 74.1% of the top 10 million (per W3Techs).<sup id="cite_ref-:0_5-2" class="reference"><a href="#cite_note-:0-5">[5]</a></sup></li>
+						<li>As of Apr 2021, jQuery is used by 77.8% of the top 10 million websites (according to W3Techs)<i>.</i><sup id="cite_ref-19" class="reference"><a href="#">[19]</a></sup></li></ul>
+					</div>
+				</div>
+
+				<div id="AfterPopularityDelete" style="display:none;">
+					<br>
+					<button type="button" id="UndoPopularityButton" class="btn btn-danger">Undo</button>
+				</div>
+
+				<div class="FeaturesSection">
+
+					<h2 id="Features">Features <span class="EditBrackets">[</span><button type="button" class="EditButton" data-bs-toggle="modal" data-bs-target="#FeaturesModal">edit</button><span class="EditBrackets">]</span><span class="EditBrackets"> [</span><button type="button" class="DeleteFeaturesButton DefDeleteButton" >delete</button><span class="EditBrackets">]</span>
+					</h2>
+					<div id="FeatText">
+					<p>jQuery includes the following features:</p>
+					<ul><li><a href="#" title="Document Object Model">DOM</a> element selections using the multi-browser open source selector engine <i>Sizzle</i>, a spin-off of the jQuery project<sup id="cite_ref-20" class="reference"><a href="#">[20]</a></sup></li>
+						<li>DOM manipulation based on CSS selectors that uses elements' names and attributes, such as id and class, as criteria to select nodes in the DOM</li>
+						<li>Events</li>
+						<li>Effects and animations</li>
+						<li><a href="#" title="Ajax (programming)">Ajax</a></li>
+						<li><a href="#" title="Futures and promises">Deferred and Promise</a> objects to control asynchronous processing</li>
+						<li><a href="#" title="JSON">JSON</a> parsing</li>
+						<li><a href="#" title="Extensibility">Extensibility</a> through plug-ins</li>
+						<li>Utilities, such as <a href="#" title="Feature detection (web development)">feature detection</a></li>
+						<li>Compatibility methods that are natively available in modern browsers, but need fallbacks for older browsers, such as <code>jQuery.inArray()</code> and <code>jQuery.each()</code>.</li>
+						<li><a href="#" class="mw-redirect" title="Cross-browser">Cross-browser</a> support</li></ul>
+					</div>
+				</div>
+
+				<div id="AfterFeaturesDelete" style="display:none;">
+					<br>
+					<button type="button" id="UndoFeaturesButton" class="btn btn-danger">Undo</button>
+				</div>
+
+					<div class="lavenderBox">
+						<div id="Externallinks" class="header">External links</div>
+						<div class="subtitle linklist"><a href="#">Caja</a> <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+						<div class="linklist">
+							<a href="#">Percipit </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani zril  </a> <a href="#">Forensibus sea </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani zril  </a> <a href="#">Vel nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit maiestatis </a>
+						</div>
+						
+						<div class="subtitle">Subtitle</div>
+					</div>
+					
+					<div class="categories">
+						<a href="#">Categories: 2006 software</a> <a href="#">Ajax (programming)</a> <a href="#">Free software programmed in JavaScript</a>
+					</div>
+				
+
+				</div>
+				<div class="pagefooter">
+					This page was last edited on 31.07.2022 | By Abdulrahman AlGhamdi
+					<div class="footerlinks">
+						<a href="#">Privacy policy</a> <a href="#">About</a> <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a> <a href="#">Developers</a>
+					</div>
+				</div>
+			
+			
+			</div>		
+		</div>
+		
+		
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="script.js"></script>
+		<script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+		<script src="ckeditor/ckeditor.js"></script>
+		<script src="bootstrap-5.0.2-dist\sweetalert.js"></script>
+
+<script>
+$(document).ready(function() {
+	Swal.fire({
+  title: 'WELCOME',
+  text:'This is a Wikipedia demo created for career opportunity',
+  icon: 'info',
+  confirmButtonText: 'continue',
+  timer: 15000,
+  timerProgressBar: true,
+  backdrop: `
+  rgba(81, 81, 81, 0.8)
+    left top
+    no-repeat
+  `
+});
+});
+
+//Overview SECTION 
+
+var OverviewText
+function OverviewFunc() {
+	OverviewText = $('#OverText').text()
+}
+OverviewFunc();
+
+ $("#OverviewModal .modal-body #editor").text(OverviewText);
+ClassicEditor
+.create(document.querySelector('#editor'),{
+	removePlugins: [ 'Table' ],
+	ckfinder: {
+            // Upload the images to the server using the CKFinder QuickUpload command.
+            uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
+        }
+});
+
+$("#SaveChanges").click(function(){	
+	TextAfterEdit = $("#OverviewModal .modal-body .ck-blurred").html()
+	console.log(TextAfterEdit);
+  $("#OverviewModal").modal('hide');
+   $("#OverText").html(TextAfterEdit).change();
+ });
+ $(document).ready(function() {
+    $('.TablePropertiesView').hide();
+});
+
+$( ".DeleteButton" ).click(function() {	
+  $(".OverviewSection").hide('slow', function(){
+	Swal.fire({
+  title: 'Section deleted successfully',
+  icon: 'success',
+  confirmButtonText: 'Done'
+});
+	$("#AfterDelete").show("slow");
+	$("#UndoButton").click(function()
+	{
+		$( ".OverviewSection" ).show("slow");
+		$("#AfterDelete").hide();	
+
+		});
+  });
+});
+//History SECTION
+
+var HistoryText
+function HistoryFunc() {
+	HistoryText = $('#HistText').text()
+}
+HistoryFunc();
+
+ $("#HistoryModal .modal-body #Historyeditor").text(HistoryText);
+ClassicEditor
+.create(document.querySelector('#Historyeditor'),{
+	removePlugins: [ 'Table' ],
+	ckfinder: {
+            // Upload the images to the server using the CKFinder QuickUpload command.
+            uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
+        }
+});
+
+$("#SaveHistoryChanges").click(function(){	
+	HistoryTextAfterEdit = $("#HistoryModal .modal-body .ck-blurred").html()
+	console.log(HistoryTextAfterEdit);
+  $("#HistoryModal").modal('hide');
+   $("#HistText").html(HistoryTextAfterEdit).change();
+ });
+
+ $(document).ready(function() {
+    $('.TablePropertiesView').hide();
+});
+
+$( ".DeleteHistoryButton" ).click(function() {	
+  $(".HistorySection").hide('slow', function(){
+	Swal.fire({
+  title: 'Section deleted successfully',
+  icon: 'success',
+  confirmButtonText: 'Done'
+});
+	$("#AfterHistoryDelete").show("slow");
+	$("#UndoHistoryButton").click(function()
+	{
+		$( ".HistorySection" ).show("slow");
+		$("#AfterHistoryDelete").hide();	
+
+		});
+  });
+});
+
+//Popularity SECTION
+
+var PopularityText
+function PopularityFunc() {
+	PopularityText = $('#PopText').text()
+}
+PopularityFunc();
+
+ $("#PopularityModal .modal-body #Popularityeditor").text(PopularityText);
+ClassicEditor
+.create(document.querySelector('#Popularityeditor'),{
+	removePlugins: [ 'Table' ],
+	ckfinder: {
+            // Upload the images to the server using the CKFinder QuickUpload command.
+            uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
+        }
+});
+
+$("#SavePopularityChanges").click(function(){	
+	PopularityAfterEdit = $("#PopularityModal .modal-body .ck-blurred").html()
+	console.log(PopularityAfterEdit);
+  $("#PopularityModal").modal('hide');
+   $("#PopText").html(PopularityAfterEdit).change();
+ });
+
+ $(document).ready(function() {
+    $('.TablePropertiesView').hide();
+});
+
+$( ".DeletePopularityButton" ).click(function() {	
+  $(".PopularitySection").hide('slow', function(){
+	Swal.fire({
+  title: 'Section deleted successfully',
+  icon: 'success',
+  confirmButtonText: 'Done'
+});
+	$("#AfterPopularityDelete").show("slow");
+	$("#UndoPopularityButton").click(function()
+	{
+		$( ".PopularitySection" ).show("slow");
+		$("#AfterPopularityDelete").hide();	
+
+		});
+  });
+});
+
+//Features SECTION
+
+var FeaturesText
+function FeaturesFunc() {
+	FeaturesText = $('#FeatText').text()
+}
+FeaturesFunc();
+
+ $("#FeaturesModal .modal-body #Featureseditor").text(FeaturesText);
+ClassicEditor
+.create(document.querySelector('#Featureseditor'),{
+	removePlugins: [ 'Table' ],
+	ckfinder: {
+            // Upload the images to the server using the CKFinder QuickUpload command.
+            uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
+        }
+});
+
+$("#SaveFeaturesChanges").click(function(){	
+	FeaturesAfterEdit = $("#FeaturesModal .modal-body .ck-blurred").html()
+	console.log(FeaturesAfterEdit);
+  $("#FeaturesModal").modal('hide');
+   $("#FeatText").html(FeaturesAfterEdit).change();
+ });
+
+ $(document).ready(function() {
+    $('.TablePropertiesView').hide();	
+});
+
+$( ".DeleteFeaturesButton" ).click(function() {	
+  $(".FeaturesSection").hide('slow', function(){
+	Swal.fire({
+  title: 'Section deleted successfully',
+  icon: 'success',
+  confirmButtonText: 'Done'
+});
+	$("#AfterFeaturesDelete").show("slow");
+	$("#UndoFeaturesButton").click(function()
+	{
+		$( ".FeaturesSection" ).show("slow");
+		$("#AfterFeaturesDelete").hide();	
+
+		});
+  });
+});
+
+
+ </script>
+ 
+
+    </body>
+</html>
